@@ -3,6 +3,7 @@
 import pyautogui
 from time import sleep
 
+#the following coordinates are for my window positioning, you'll have to find your coordinates using pyautogui.position()
 y1 = 400
 y2 = 580
 y3 = 740
