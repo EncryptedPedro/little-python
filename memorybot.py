@@ -29,12 +29,11 @@ level=1
 
 def scan(coords, sequence, level):
     for square, (x,y) in coords.items():
-        #print(f"{square}: x={x}, y={y}")
         if (pyautogui.pixel(x,y) == white):
             sequence.append(square)
             print("Found white at", square)
             sleep(0.5) #500ms wait before benchmark provides next square
-            print(level, len(sequence))
+            print(f"level {level}, step {len(sequence)}")
             if level==len(sequence):
                 return True
     return False
@@ -50,7 +49,7 @@ def click(coords, sequence, level):
                     countClick = countClick+1
     return True #breaks out of loop if finished clicking
 
-while (level<35):
+while (level<31):
     sequence = []
     scanning = True
     while (scanning):
